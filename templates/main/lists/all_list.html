@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h1>All Transactions</h1>
+
+    {% if not transactions %}
+        <h3>No entries for that type/period. Add a new transaction?</h3>
+
+    {% else %}
+        <h3>Click on a category/type to see all entries for it!</h3>
+        <table class="table-container">
+            <thead>
+            <tr class="table-container">
+                <th>Amount:</th>
+                <th>Date:</th>
+                <th>Category:</th>
+                <th>Type:</th>
+                <th>More:</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for transaction in transactions %}
+                {% if transaction.get_my_model_name == 'expense' %}
+                    <tr class="expense-row">
+                        <td>- {{ transaction.amount|floatformat:2 }}</td>
+                        <td>{{ transaction.date }}</td>
+                        <td>
+                            <a href="{% url 'expenses list' transaction.category|lower %}">{{ transaction.category }}</a>
+                        </td>
+                        <td><a href="{% url 'expenses list' transaction.type|lower %}">{{ transaction.type }}</a></td>
+                        <td><a href="{% url 'expense details' transaction.id %}">Details</a></td>
+                    </tr>
+                {% else %}
+                    <tr class="table-row">
+                        <td>+ {{ transaction.amount|floatformat:2 }}</td>
+                        <td>{{ transaction.date }}</td>
+                        <td>
+                            <a href="{% url 'incomings list' transaction.category|lower %}">{{ transaction.category }}</a>
+                        </td>
+                        <td>N/A</td>
+                        <td><a href="{% url 'incoming details' transaction.id %}">Details</a></td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+
+    {% endif %}
+
+    <!--Add transactions-->
+    <div class="buttons-container-wide">
+        <a class="green" href="{% url 'add incoming' %}">Add an incoming</a>
+        <a class="red" href="{% url 'add expense' %}">Add an expense</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h1>Edit Your Profile</h1>
+    <h3>Please fill all required fields!</h3>
+
+    <div>
+        <div></div>
+        <div>
+            <form class="form" method="post" action="{% url 'edit profile' request.user.id %}">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit">
+                <p>
+                    Want to change your password?
+                    <a href="{% url 'change password' %}">Change Password</a>
+                </p>
+                <p>
+                    Want to delete your profile?
+                    <a href="{% url 'delete profile' request.user.id %}">Delete Profile</a>
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

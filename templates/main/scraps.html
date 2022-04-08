@@ -1,0 +1,16 @@
+<div>
+    <p>Browse incomings by category:</p>
+    {% for inc_cat in incomings_categories %}
+        <p><a style="color: {{ inc_cat.color }}"
+              href="{% url 'incomings list' inc_cat.name|lower %}">{{ inc_cat.name }}</a></p>
+    {% endfor %}
+</div>
+
+<div>
+    <p>Browse expenses by category:</p>
+    {% for exp_cat in expenses_categories %}
+        <p><a style="color: {{ exp_cat.color }}"
+              href="{% url 'expenses list' exp_cat.name|lower %}">{{ exp_cat.name }}</a></p>
+    {% endfor %}
+</div>
+

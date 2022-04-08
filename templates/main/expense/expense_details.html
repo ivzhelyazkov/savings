@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h1>Expense Details</h1>
+
+    {% if not request.user.id == expense.user_id %}
+        <h3>This is not your transaction!</h3>
+
+    {% else %}
+        <h3>Click Edit or Delete to modify/erase this transaction</h3>
+
+        <div class="details-container">
+            <div>
+                <h3>Amount: {{ expense.amount }}</h3>
+                <h3>Date of Payment: {{ expense.date }}</h3>
+                <h3>Category of Payment: {{ expense.category }}</h3>
+                <h3>Type of Payment: {{ expense.type }}</h3>
+                {% if expense.description %}
+                    <h3>Description: {{ expense.description }}</h3>
+                {% endif %}
+            </div>
+            <div class="edit-delete-buttons-container">
+                <a class="green" href="{% url 'edit expense' expense.id %}"><h3>Edit</h3></a>
+                <a class="red" href="{% url 'delete expense' expense.id %}"><h3>Delete</h3></a>
+            </div>
+        </div>
+
+    {% endif %}
+{% endblock %}

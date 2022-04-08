@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h1>Add Incoming</h1>
+    <h3>Please fill all required fields!</h3>
+
+    <div>
+        <div></div>
+        <div class="form">
+            <form method="post" action="{% url 'add incoming' %}">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+{% endblock %}

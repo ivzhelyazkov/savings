@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h1>All Expenses</h1>
+
+    {% if not expenses_filtered %}
+        <h3>No entries for that type/period. Add a new transaction?</h3>
+
+    {% else %}
+        <h3>Click on a category/type to see all entries for it!</h3>
+        <table class="table-container">
+            <thead>
+            <tr class="table-container">
+                <th>Amount:</th>
+                <th>Date:</th>
+                <th>Category:</th>
+                <th>Type:</th>
+                <th>More:</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for expense in expenses_filtered %}
+                <tr class="expense-row">
+                    <td>{{ expense.amount|floatformat:2 }}</td>
+                    <td>{{ expense.date }}</td>
+                    <td><a href="{% url 'expenses list' expense.category|lower %}">{{ expense.category }}</a></td>
+                    <td><a href="{% url 'expenses list' expense.type|lower %}">{{ expense.type }}</a></td>
+                    <td><a href="{% url 'expense details' expense.id %}">Details</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+
+    {% endif %}
+
+    <!--Add transactions-->
+    <div class="buttons-container-wide">
+        <a class="green" href="{% url 'add incoming' %}">Add an incoming</a>
+        <a class="red" href="{% url 'add expense' %}">Add an expense</a>
+    </div>
+{% endblock %}

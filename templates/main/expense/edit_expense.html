@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h1>Edit Your Expense</h1>
+
+    {% if not request.user.id == expense.user_id %}
+        <h3>This is not your transaction!</h3>
+
+    {% else %}
+        <h3>Please fill all required fields!</h3>
+
+        <div class="form">
+            <div></div>
+            <div>
+                <form method="post" action="{% url 'edit expense' expense.id %}">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+    {% endif %}
+{% endblock %}

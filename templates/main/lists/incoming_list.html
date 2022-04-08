@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <h1>All Incoming Payments</h1>
+
+    {% if not incomings_filtered %}
+        <h3>No entries for that type/period. Add a new transaction?</h3>
+
+    {% else %}
+        <h3>Click on a category to see all entries for it!</h3>
+        <table class="table-container">
+            <thead>
+            <tr class="table-container">
+                <th>Amount:</th>
+                <th>Date:</th>
+                <th>Category:</th>
+                <th>More:</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for incoming in incomings_filtered %}
+                <tr class="table-row">
+                    <td>{{ incoming.amount|floatformat:2 }}</td>
+                    <td>{{ incoming.date }}</td>
+                    <td><a href="{% url 'incomings list' incoming.category|lower %}">{{ incoming.category }}</a></td>
+                    <td><a href="{% url 'incoming details' incoming.id %}">Details</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+
+    {% endif %}
+
+    <!--Add transactions-->
+    <div class="buttons-container-wide">
+        <a class="green" href="{% url 'add incoming' %}">Add an incoming</a>
+        <a class="red" href="{% url 'add expense' %}">Add an expense</a>
+    </div>
+{% endblock %}

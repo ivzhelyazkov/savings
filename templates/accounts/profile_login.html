@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+    <h1>Login to Your Profile</h1>
+
+    <!--Displays message if redirected by the CustomLoginRequired Mixin-->
+    {% if messages %}
+        {% for message in messages %}
+            <h3 xmlns="http://www.w3.org/1999/html">{{ message }}</h3>
+        {% endfor %}
+    {% else %}
+            <h3>Please fill all required fields!</h3>
+    {% endif %}
+
+    <div>
+        <div></div>
+        <div class="form">
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Login">
+            </form>
+            <p>
+                Don't have an account?
+                <a href="{% url 'register' %}">Register</a>
+            </p>
+        </div>
+        <div></div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+    <div class="dashboard-body">
+
+        <h1>Welcome to Sloth Savings, {{ profile_name }}!</h1>
+        <h3>Click on Details to see all entries or add a new transaction</h3>
+
+        <!--Summary-->
+        <div class="dashboard-container">
+            <h2>Your savings total:</h2>
+            <div>
+                <h2>{{ savings_total|floatformat:2 }}$</h2>
+                <a class="details-button" href="{% url 'list all' %}">Details</a>
+            </div>
+        </div>
+
+        <!--Incomings Summary-->
+        <div class="dashboard-container">
+            <h2>You have {{ user_incomings }} incomings total:</h2>
+            <div>
+                <h2>{{ incomings_total|floatformat:2 }}$</h2>
+                <a class="details-button" href="{% url 'incomings list' 'all' %}">Details</a>
+            </div>
+        </div>
+
+        <!--Expenses Summary-->
+        <div class="dashboard-container">
+            <h2>You have {{ user_expenses }} expenses total:</h2>
+            <div>
+                <h2>{{ expenses_total|floatformat:2 }}$</h2>
+                <a class="details-button, red" href="{% url 'expenses list' 'all' %}">Details</a>
+            </div>
+        </div>
+
+        <!--Ordinary Summary-->
+        <div class="dashboard-container">
+            <h2>Ordinary expenses total:</h2>
+            <div>
+                <h2>{{ expenses_ordinary|floatformat:2 }}$</h2>
+                <a class="details-button, red" href="{% url 'expenses list' 'ordinary' %}">Details</a>
+            </div>
+        </div>
+
+        <!--Extraordinary Summary-->
+        <div class="dashboard-container">
+            <h2>Extraordinary expenses total:</h2>
+            <div>
+                <h2>{{ expenses_extraordinary|floatformat:2 }}$</h2>
+                <a class="details-button, red" href="{% url 'expenses list' 'extraordinary' %}">Details</a>
+            </div>
+        </div>
+
+        <!--Add transactions-->
+        <div class="buttons-container">
+            <a class="green" href="{% url 'add incoming' %}">Add an incoming</a>
+            <a class="red" href="{% url 'add expense' %}">Add an expense</a>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

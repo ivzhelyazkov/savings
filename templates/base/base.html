@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <!-- RWD tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloth Savings</title>
+    <!-- Static Load -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
+</head>
+
+<body>
+<div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'monthly' %}">Monthly Reports</a></li>
+                    <li><a href="{% url 'edit profile' request.user.id %}">Profile Settings</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <!-- End Navigation Bar -->
+
+    <!-- Main Content -->
+    {% block page_content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            &copy;IvZh 2022. All rights reserved.
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+</div>
+</body>
+</html>

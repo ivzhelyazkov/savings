@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+    <!--Home Page When Not Logged In-->
+    <h1>Welcome to Sloth Savings!</h1>
+
+    <h3>App's public stats:</h3>
+
+    <!--Public stats summary-->
+    <div>
+        <div class="home-container">
+            <h2>Users Total:</h2>
+            <div>
+                <h2>{{ profiles }}</h2>
+            </div>
+        </div>
+
+        <div class="home-container">
+            <h2>Incoming Payments Total:</h2>
+            <div>
+                <h2>{{ incomings|floatformat:2 }}$</h2>
+            </div>
+        </div>
+
+        <div class="home-container">
+            <h2>Expenses Total:</h2>
+            <div>
+                <h2>{{ expenses|floatformat:2 }}$</h2>
+            </div>
+        </div>
+
+        <div class="home-container">
+            <h2>Savings Total:</h2>
+            <div>
+                <h2>{{ savings|floatformat:2 }}$</h2>
+            </div>
+        </div>
+    </div>
+
+    <!--Add transactions-->
+    <div class="buttons-container">
+        <a class="green" href="{% url 'login' %}">Login</a>
+        <a class="green" href="{% url 'register' %}">Register</a>
+    </div>
+
+
+{% endblock %}
