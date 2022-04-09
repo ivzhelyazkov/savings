@@ -7,7 +7,7 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family: OpenSans, sans-serif;
 }
 
@@ -20,7 +20,7 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family: OpenSans, sans-serif;
     font-weight: bold;
 }
@@ -34,7 +34,7 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family: OpenSans, sans-serif;
     text-decoration: none;
 }
@@ -57,7 +57,7 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family: OpenSans, sans-serif;
     text-decoration: none;
 }

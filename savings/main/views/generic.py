@@ -7,7 +7,7 @@ from savings.main.models import Incoming, Expense, IncomingCategory, ExpenseCate
 
 
 class HomeView(RedirectToDashboard, views.TemplateView):
-    template_name = 'main/home.html'
+    template_name = 'main/generic/home.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -25,7 +25,7 @@ class HomeView(RedirectToDashboard, views.TemplateView):
 
 
 class DashboardView(CustomLoginRequiredMixin, views.TemplateView):
-    template_name = 'main/dashboard.html'
+    template_name = 'main/generic/dashboard.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -69,7 +69,7 @@ class DashboardView(CustomLoginRequiredMixin, views.TemplateView):
 
 
 class MonthlyView(CustomLoginRequiredMixin, views.TemplateView):
-    template_name = 'main/monthly.html'
+    template_name = 'main/generic/monthly.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -105,7 +105,7 @@ class MonthlyView(CustomLoginRequiredMixin, views.TemplateView):
 
 
 class AboutPageView(RedirectToDashboard, views.TemplateView):
-    template_name = 'main/about.html'
+    template_name = 'main/generic/about.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

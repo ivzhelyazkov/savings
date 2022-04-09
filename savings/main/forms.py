@@ -1,5 +1,5 @@
 from django import forms
-from savings.common.helpers import BootstrapFormMixin, DisabledFieldsFormMixin
+from savings.common.helpers import BootstrapFormMixin
 from savings.main.models import Incoming, IncomingCategory, ExpenseCategory, Expense
 
 

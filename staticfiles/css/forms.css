@@ -5,7 +5,7 @@
     left: auto;
     border: #3a3a3a;
     border-radius: 5px;
-    padding: 20px;
+    padding-left: 16px;
     width: 30%;
     margin: 0 auto;
     grid-area: inner-div;

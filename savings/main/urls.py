@@ -1,13 +1,14 @@
 from django.urls import path
-from django.views.generic import TemplateView
 
+from savings.main.views.expense import ExpenseDetailsView, AddExpenseView, EditExpenseView, DeleteExpenseView
 from savings.main.views.generic import HomeView, DashboardView, MonthlyView, AboutPageView
-from savings.main.views.expense import AddExpenseView, ExpenseDetailsView, EditExpenseView, DeleteExpenseView
-from savings.main.views.incoming import AddIncomingView, IncomingDetailsView, EditIncomingView, DeleteIncomingView
+from savings.main.views.incoming import IncomingDetailsView, AddIncomingView, EditIncomingView, DeleteIncomingView
 from savings.main.views.lists import FilteredIncomingsListView, FilteredExpensesListView, ListAllView, ListMonthlyView
 
 urlpatterns = (
     path('', HomeView.as_view(), name='home'),
+    path('about/', AboutPageView.as_view(), name='about'),
+
     path('dashboard/', DashboardView.as_view(), name='dashboard'),
     path('monthly/', MonthlyView.as_view(), name='monthly'),
 
@@ -26,5 +27,4 @@ urlpatterns = (
     path('expenses/edit/<int:pk>/', EditExpenseView.as_view(), name='edit expense'),
     path('expenses/delete/<int:pk>/', DeleteExpenseView.as_view(), name='delete expense'),
 
-    path('about/', AboutPageView.as_view(), name='about'),
 )
