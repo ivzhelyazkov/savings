@@ -23,7 +23,7 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    font-size: 23px;
+    font-size: 1.25rem;
     padding: 14px 16px;
     text-decoration: none;
     font-family: OpenSans, sans-serif;
@@ -41,7 +41,7 @@ li a:hover {
 footer {
     background: linear-gradient(olive, darkolivegreen);
     font-family: OpenSans, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
     text-align: center;
     padding: 10px;
@@ -58,6 +58,16 @@ h1, h2, h3 {
 }
 h1 {
     margin-bottom: -16px;
+    font-size: 1.563rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1rem;
 }
 
 

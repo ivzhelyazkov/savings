@@ -7,7 +7,7 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
-    font-size: 19px;
+    font-size: 1.25rem;
     font-family: OpenSans, sans-serif;
 }
 
@@ -20,7 +20,7 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
-    font-size: 19.20px;
+    font-size: 1.25rem;
     font-family: OpenSans, sans-serif;
     font-weight: bold;
 }
@@ -34,7 +34,7 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
-    font-size: 19.20px;
+    font-size: 1.25rem;
     font-family: OpenSans, sans-serif;
     text-decoration: none;
 }
@@ -42,6 +42,10 @@
 .table-row:hover {
     box-shadow: 9px 9px 30px 3px #000000;
     background: olivedrab;
+}
+
+.table-row td a{
+    margin-right: 4px;
 }
 
 .expense-row {
@@ -53,7 +57,7 @@
     height: auto;
     transition: all 0.3s cubic-bezier(.50, .80, .25, 1);
     box-shadow: -8px -2px 28px -8px #000000;
-    font-size: 19.20px;
+    font-size: 1.25rem;
     font-family: OpenSans, sans-serif;
     text-decoration: none;
 }
@@ -61,6 +65,10 @@
 .expense-row:hover {
     box-shadow: 9px 9px 30px 3px #000000;
     background: indianred;
+}
+
+.expense-row td a{
+    margin-right: 4px;
 }
 
 .buttons-container-wide {

@@ -115,3 +115,39 @@ class Expense(models.Model):
 
     def __str__(self):
         return f'{self.amount} by {self.user} on {self.date}'
+
+
+class AboutContent(models.Model):
+    AUTHOR_MAX_LEN = 25
+
+    author = models.CharField(
+        default='Super',
+        max_length=AUTHOR_MAX_LEN,
+    )
+
+    paragraph_1 = models.TextField()
+
+    paragraph_2 = models.TextField(
+        null=True,
+        blank=True,
+    )
+
+    paragraph_3 = models.TextField(
+        null=True,
+        blank=True,
+    )
+
+    paragraph_4 = models.TextField(
+        null=True,
+        blank=True,
+    )
+
+    paragraph_5 = models.TextField(
+        null=True,
+        blank=True,
+    )
+
+    # optional ImageFields to be added later\
+
+    def __str__(self):
+        return f'About Content by {self.author}'

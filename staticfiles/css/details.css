@@ -17,8 +17,32 @@
     margin: 8px;
 }
 
+.details-container a {
+    text-align: center;
+}
+
 .edit-delete-buttons-container {
     display: flex;
     flex-direction: row;
 
+}
+
+.delete-button, .edit-button {
+    border-radius: 10px;
+    font-family: OpenSans, sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 4px;
+    padding-right: 24px;
+    margin: 4px;
+}
+
+.edit-button:hover {
+    background: olivedrab;
+    text-decoration: underline;
+}
+
+.delete-button:hover {
+    background: indianred;
+    text-decoration: underline;
 }

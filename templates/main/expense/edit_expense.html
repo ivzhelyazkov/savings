@@ -3,10 +3,10 @@
     <h1>Edit Your Expense</h1>
 
     {% if not request.user.id == expense.user_id %}
-        <h3>This is not your transaction!</h3>
+        <h2>This is not your transaction!</h2>
 
     {% else %}
-        <h3>Please fill all required fields!</h3>
+        <h2>Please fill all required fields!</h2>
 
         <div class="form">
             <div></div>

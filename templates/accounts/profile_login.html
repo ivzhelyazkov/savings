@@ -6,10 +6,10 @@
     <!--Displays message if redirected by the CustomLoginRequired Mixin-->
     {% if messages %}
         {% for message in messages %}
-            <h3 xmlns="http://www.w3.org/1999/html">{{ message }}</h3>
+            <h2 xmlns="http://www.w3.org/1999/html">{{ message }}</h2>
         {% endfor %}
     {% else %}
-            <h3>Please fill all required fields!</h3>
+            <h2>Please fill all required fields!</h2>
     {% endif %}
 
     <div>

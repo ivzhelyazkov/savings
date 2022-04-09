@@ -3,7 +3,7 @@ from django.views import generic as views
 from savings.accounts.models import Profile
 from savings.common.calculators import get_monthly
 from savings.common.view_mixins import RedirectToDashboard, CustomLoginRequiredMixin
-from savings.main.models import Incoming, Expense, IncomingCategory, ExpenseCategory
+from savings.main.models import Incoming, Expense, IncomingCategory, ExpenseCategory, AboutContent
 
 
 class HomeView(RedirectToDashboard, views.TemplateView):
@@ -88,7 +88,7 @@ class MonthlyView(CustomLoginRequiredMixin, views.TemplateView):
         monthly_ordinary = get_monthly(user_ordinary_expenses)
         monthly_extraordinary = get_monthly(user_extraordinary_expenses)
 
-        monthly_balance = monthly_incomings-monthly_expenses
+        monthly_balance = monthly_incomings - monthly_expenses
 
         context['profile_name'] = profile.first_name
         context['monthly_balance'] = monthly_balance
@@ -100,5 +100,18 @@ class MonthlyView(CustomLoginRequiredMixin, views.TemplateView):
 
         context['incomings_categories'] = incomings_categories
         context['expenses_categories'] = expenses_categories
+
+        return context
+
+
+class AboutPageView(RedirectToDashboard, views.TemplateView):
+    template_name = 'main/about.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        about_instance = AboutContent.objects.first()
+        about_content = [about_instance.paragraph_1, about_instance.paragraph_2, about_instance.paragraph_3,
+                         about_instance.paragraph_4, about_instance.paragraph_5]
+        context['about_content'] = about_content
 
         return context

@@ -4,20 +4,7 @@
     <!--Static About Page-->
     <h1>Welcome to Sloth Savings!</h1>
 
-    <h3 class="about-text">
-        Sloth Savings was designed by me as a SoftUni student while learning Django.
-    </h3>
-    <h3 class="about-text">
-        You can create your profile and set your initial budget.
-        You can edit your profile in Profile Settings.
-        There's an option to change your password or delete your profile too.
-    </h3>
-    <h3 class="about-text">
-        When you are logged in you can add, edit and delete your transactions.
-        Transactions are two kinds - Incoming payments and Expenses.
-        The app tracks your transactions and offers you all-time and monthly reports.
-    </h3>
-
-    <h3 class="about-text">Sign in to your account! <a href="{% url 'login' %}">Login</a></h3>
-    <h3 class="about-text">Don't have an account? <a href="{% url 'register' %}">Register</a></h3>
+    {% for paragraph in about_content %}
+        <h2 class="about-text">{{ paragraph }}</h2>
+    {% endfor %}
 {% endblock %}

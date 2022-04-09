@@ -21,8 +21,8 @@
 
 .dashboard-container h2 {
     margin-left: 8px;
+    margin-top: 20px;
     font-family: OpenSans, sans-serif;
-    font-size: 23px;
 }
 
 .dashboard-container div {
@@ -34,7 +34,7 @@
 .details-button {
     border-radius: 10px;
     font-family: OpenSans, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     text-decoration: none;
     padding: 20px;
     margin: 4px;
@@ -65,7 +65,7 @@
 .red, .green {
     border-radius: 10px;
     font-family: OpenSans, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     text-decoration: none;
     padding: 20px;
     margin: 4px;
