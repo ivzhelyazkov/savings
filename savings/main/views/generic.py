@@ -1,7 +1,7 @@
 from django.views import generic as views
 
 from savings.accounts.models import Profile
-from savings.common.calculators import get_monthly
+from savings.common.calculators import get_monthly_sum
 from savings.common.view_mixins import RedirectToDashboard, CustomLoginRequiredMixin
 from savings.main.models import Incoming, Expense, IncomingCategory, ExpenseCategory, AboutContent
 
@@ -83,10 +83,10 @@ class MonthlyView(CustomLoginRequiredMixin, views.TemplateView):
         incomings_categories = IncomingCategory.objects.all
         expenses_categories = ExpenseCategory.objects.all
 
-        monthly_incomings = get_monthly(user_incomings)
-        monthly_expenses = get_monthly(user_expenses)
-        monthly_ordinary = get_monthly(user_ordinary_expenses)
-        monthly_extraordinary = get_monthly(user_extraordinary_expenses)
+        monthly_incomings = get_monthly_sum(user_incomings)
+        monthly_expenses = get_monthly_sum(user_expenses)
+        monthly_ordinary = get_monthly_sum(user_ordinary_expenses)
+        monthly_extraordinary = get_monthly_sum(user_extraordinary_expenses)
 
         monthly_balance = monthly_incomings - monthly_expenses
 
