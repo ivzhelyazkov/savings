@@ -1,2 +1,2 @@
 web: gunicorn savings.wsgi
-release: python manage.py migrate
+release: python savings/manage.py migrate
