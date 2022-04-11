@@ -23,7 +23,7 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: 14px 16px;
     text-decoration: none;
     font-family: OpenSans, sans-serif;
@@ -52,7 +52,7 @@ footer {
 }
 
 h1, h2, h3 {
-    margin-left: 16px;
+    margin-left: 8px;
     font-family: OpenSans, sans-serif;
     font-weight: lighter;
 }
@@ -111,6 +111,8 @@ h3 {
 .home-container div {
     margin-right: 8px;
 }
+
+
 
 
 
