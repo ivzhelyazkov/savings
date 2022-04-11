@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'savings.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'datsabs2iu8mi4',
-        'USER': 'oehjdfrpieaste',
-        'PASSWORD': 'b2b601c771c4ab6a5a64334912262197da1c721b0dbb65ed92ae708c562182fb ',
-        'HOST': 'ec2-52-212-228-71.eu-west-1.compute.amazonaws.com',
+        'NAME': 'd5mmo2kn02das',
+        'USER': 'ywrectxpsqcjxo',
+        'PASSWORD': '16e39b96d987d2d8bb9e5e3db9896737199114f57975278ea53e710a2a2f65e7',
+        'HOST': 'ec2-54-75-184-144.eu-west-1.compute.amazonaws.com',
         'PORT': '5432'
     }
 }
