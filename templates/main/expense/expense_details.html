@@ -3,24 +3,24 @@
     <h1>Expense Details</h1>
 
     {% if not request.user.id == expense.user_id %}
-        <h2>This is not your transaction!</h2>
+        <h3>This is not your transaction!</h3>
 
     {% else %}
-        <h2>Click Edit or Delete to modify/erase this transaction</h2>
+        <h3>Click Edit or Delete to modify/erase this transaction</h3>
 
         <div class="details-container">
             <div>
-                <h2>Amount: {{ expense.amount }}</h2>
-                <h2>Date of Payment: {{ expense.date }}</h2>
-                <h2>Category of Payment: {{ expense.category }}</h2>
-                <h2>Type of Payment: {{ expense.type }}</h2>
+                <h3>Amount: {{ expense.amount }}</h3>
+                <h3>Date of Payment: {{ expense.date }}</h3>
+                <h3>Category of Payment: {{ expense.category }}</h3>
+                <h3>Type of Payment: {{ expense.type }}</h3>
                 {% if expense.description %}
-                    <h2>Description: {{ expense.description }}</h2>
+                    <h3>Description: {{ expense.description }}</h3>
                 {% endif %}
             </div>
             <div class="edit-delete-buttons-container">
-                <a class="edit-button" href="{% url 'edit expense' expense.id %}"><h2>Edit</h2></a>
-                <a class="delete-button" href="{% url 'delete expense' expense.id %}"><h2>Delete</h2></a>
+                <a class="edit-button" href="{% url 'edit expense' expense.id %}"><h3>Edit</h3></a>
+                <a class="delete-button" href="{% url 'delete expense' expense.id %}"><h3>Delete</h3></a>
             </div>
         </div>
 

@@ -3,10 +3,10 @@
     <h1>Delete Expense</h1>
 
     {% if not request.user.id == expense.user_id %}
-        <h2>This is not your transaction!</h2>
+        <h3>This is not your transaction!</h3>
 
     {% else %}
-        <h2>Are you sure you want to delete this transaction?</h2>
+        <h3>Are you sure you want to delete this transaction?</h3>
 
         <div class="form">
             <div></div>

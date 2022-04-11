@@ -4,49 +4,49 @@
     <div class="dashboard-body">
 
         <h1>This is your monthly report, {{ profile_name }}!</h1>
-        <h2>Click on Details to see all entries this month or add a new transaction</h2>
+        <h3>Click on Details to see all entries this month or add a new transaction</h3>
 
         <!--Summary-->
         <div class="dashboard-container">
-            <h2>Your balance this month:</h2>
+            <h3>Your balance this month:</h3>
             <div>
-                <h2>{{ monthly_balance|floatformat:2 }}$</h2>
+                <h3>{{ monthly_balance|floatformat:2 }}$</h3>
                 <a class="details-button" href="{% url 'list monthly' %}">Details</a>
             </div>
         </div>
 
         <!--Monthly Incomings Summary-->
         <div class="dashboard-container">
-            <h2>Monthly Incoming:</h2>
+            <h3>Monthly Incoming:</h3>
             <div>
-                <h2>{{ monthly_incomings|floatformat:2 }}$</h2>
+                <h3>{{ monthly_incomings|floatformat:2 }}$</h3>
                 <a class="details-button" href="{% url 'incomings list' 'monthly' %}">Details</a>
             </div>
         </div>
 
         <!--Monthly Expenses Summary-->
         <div class="dashboard-container">
-            <h2>Expenses this month:</h2>
+            <h3>Expenses this month:</h3>
             <div>
-                <h2>{{ monthly_expenses|floatformat:2 }}$</h2>
+                <h3>{{ monthly_expenses|floatformat:2 }}$</h3>
                 <a class="details-button, red" href="{% url 'expenses list' 'monthly' %}">Details</a>
             </div>
         </div>
 
         <!--Monthly Ordinary Summary-->
         <div class="dashboard-container">
-            <h2>Ordinary this month:</h2>
+            <h3>Ordinary this month:</h3>
             <div>
-                <h2>{{ monthly_ordinary|floatformat:2 }}$</h2>
+                <h3>{{ monthly_ordinary|floatformat:2 }}$</h3>
                 <a class="details-button, red" href="{% url 'expenses list' 'monthly-ordinary' %}">Details</a>
             </div>
         </div>
 
         <!--Monthly Extraordinary Summary-->
         <div class="dashboard-container">
-            <h2>Extraordinary this month:</h2>
+            <h3>Extraordinary this month:</h3>
             <div>
-                <h2>{{ monthly_extraordinary|floatformat:2 }}$</h2>
+                <h3>{{ monthly_extraordinary|floatformat:2 }}$</h3>
                 <a class="details-button, red" href="{% url 'expenses list' 'monthly-extraordinary' %}">Details</a>
             </div>
         </div>
