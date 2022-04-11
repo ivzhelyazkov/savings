@@ -3,7 +3,7 @@ from django.views import generic as views
 from savings.accounts.models import Profile
 from savings.common.calculators import get_monthly_sum
 from savings.common.view_mixins import RedirectToDashboard, CustomLoginRequiredMixin
-from savings.main.models import Incoming, Expense, IncomingCategory, ExpenseCategory, AboutContent
+from savings.main.models import Incoming, Expense, IncomingCategory, ExpenseCategory
 
 
 class HomeView(RedirectToDashboard, views.TemplateView):
@@ -104,14 +104,14 @@ class MonthlyView(CustomLoginRequiredMixin, views.TemplateView):
         return context
 
 
-class AboutPageView(RedirectToDashboard, views.TemplateView):
-    template_name = 'main/generic/about.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        about_instance = AboutContent.objects.first()
-        about_content = [about_instance.paragraph_1, about_instance.paragraph_2, about_instance.paragraph_3,
-                         about_instance.paragraph_4, about_instance.paragraph_5]
-        context['about_content'] = about_content
-
-        return context
+# class AboutPageView(RedirectToDashboard, views.TemplateView):
+#     template_name = 'main/generic/about.html'
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         about_instance = AboutContent.objects.first()
+#         about_content = [about_instance.paragraph_1, about_instance.paragraph_2, about_instance.paragraph_3,
+#                          about_instance.paragraph_4, about_instance.paragraph_5]
+#         context['about_content'] = about_content
+#
+#         return context

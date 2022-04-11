@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from savings.main.models import IncomingCategory, Incoming, ExpenseCategory, Expense, AboutContent
+from savings.main.models import IncomingCategory, Incoming, ExpenseCategory, Expense
 
 
 @admin.register(IncomingCategory)
@@ -27,6 +27,6 @@ class ExpenseAdmin(admin.ModelAdmin):
     list_display = ('amount', 'date', 'type', 'category', 'user')
 
 
-@admin.register(AboutContent)
-class AboutContentAdmin(admin.ModelAdmin):
-    list_display = ('author',)
+# @admin.register(AboutContent)
+# class AboutContentAdmin(admin.ModelAdmin):
+#     list_display = ('author',)
