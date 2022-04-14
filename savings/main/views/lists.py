@@ -8,6 +8,8 @@ from savings.common.view_mixins import CustomLoginRequiredMixin
 
 
 class FilteredIncomingsListView(CustomLoginRequiredMixin, views.ListView):
+    paginate_by = 5
+
     # category changes both the queryset and the url. Categories are dynamic
     def get_queryset(self):
         filter_by = self.kwargs['category'].capitalize()
@@ -26,6 +28,8 @@ class FilteredIncomingsListView(CustomLoginRequiredMixin, views.ListView):
 
 
 class FilteredExpensesListView(CustomLoginRequiredMixin, views.ListView):
+    paginate_by = 5
+
     # type/category/monthly changes both the queryset and the url
     def get_queryset(self):
         filter_by = self.kwargs['category'].capitalize()
@@ -59,6 +63,8 @@ class FilteredExpensesListView(CustomLoginRequiredMixin, views.ListView):
 
 
 class ListAllView(CustomLoginRequiredMixin, views.ListView):
+    paginate_by = 5
+
     def get_queryset(self):
         result_list = sorted(
             chain(Expense.objects.filter(user_id=self.request.user.id),
@@ -72,6 +78,8 @@ class ListAllView(CustomLoginRequiredMixin, views.ListView):
 
 
 class ListMonthlyView(CustomLoginRequiredMixin, views.ListView):
+    paginate_by = 5
+
     def get_queryset(self):
         result_list = sorted(
             chain(Expense.objects.filter(user_id=self.request.user.id)
