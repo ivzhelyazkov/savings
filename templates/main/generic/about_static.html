@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <!--About Page-->
+    <h1>Welcome to Sloth Savings!</h1>
+
+    <h3 class="about-text">
+        Sloth Savings was created by IvZh as a Django project for a SoftUni exam while learning about Python Frameworks.
+        It tracks your all-time and monthly budget and expenses and provides you with reports by type and category.
+    </h3>
+
+    <h3 class="about-text">
+        You can register for a new profile or log in to your existing account. Click on Profile Settings to edit your profile.
+        There you can also change your password or even delete your profile.
+    </h3>
+    <h3 class="about-text">
+        Click on Add Expense or Add Incoming to enter your transaction into the database. The app automatically calculates your
+        savings and can provide you with lists of income/expenditures. Click on category or type to see all transactions for the period.
+    </h3>
+
+    <h3 class="about-text">
+        Monthly report provides you with a list of your transactions for the current month so you can better track your budget.
+        You can click on each individual transaction details and edit or delete it.
+    </h3>
+{% endblock %}

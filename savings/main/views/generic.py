@@ -105,7 +105,7 @@ class MonthlyView(CustomLoginRequiredMixin, views.TemplateView):
 
 
 # class AboutPageView(RedirectToDashboard, views.TemplateView):
-#     template_name = 'main/generic/about.html'
+#     template_name = 'main/generic/about_dynamic.html'
 #
 #     def get_context_data(self, **kwargs):
 #         context = super().get_context_data(**kwargs)

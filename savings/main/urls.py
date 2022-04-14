@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
 from savings.main.views.expense import ExpenseDetailsView, AddExpenseView, EditExpenseView, DeleteExpenseView
 from savings.main.views.generic import HomeView, DashboardView, MonthlyView
@@ -8,6 +9,7 @@ from savings.main.views.lists import FilteredIncomingsListView, FilteredExpenses
 urlpatterns = (
     path('', HomeView.as_view(), name='home'),
     # path('about/', AboutPageView.as_view(), name='about'),
+    path('about/',TemplateView.as_view(template_name='main/generic/about_static.html'), name='about'),
 
     path('dashboard/', DashboardView.as_view(), name='dashboard'),
     path('monthly/', MonthlyView.as_view(), name='monthly'),
