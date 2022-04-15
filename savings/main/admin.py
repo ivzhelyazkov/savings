@@ -12,6 +12,8 @@ class IncomingCategoryAdmin(admin.ModelAdmin):
 @admin.register(Incoming)
 class IncomingAdmin(admin.ModelAdmin):
     list_display = ('amount', 'date', 'category', 'user')
+    list_filter = ('user', )
+
 
 
 @admin.register(ExpenseCategory)
@@ -22,6 +24,7 @@ class ExpenseCategoryAdmin(admin.ModelAdmin):
 @admin.register(Expense)
 class ExpenseAdmin(admin.ModelAdmin):
     list_display = ('amount', 'date', 'type', 'category', 'user')
+    list_filter = ('user', )
 
 
 # @admin.register(AboutContent)

@@ -1,5 +1,5 @@
 from django.urls import path
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 from savings.main.views.expense import ExpenseDetailsView, AddExpenseView, EditExpenseView, DeleteExpenseView
 from savings.main.views.generic import HomeView, DashboardView, MonthlyView
@@ -28,5 +28,7 @@ urlpatterns = (
     path('expenses/add/', AddExpenseView.as_view(), name='add expense'),
     path('expenses/edit/<int:pk>/', EditExpenseView.as_view(), name='edit expense'),
     path('expenses/delete/<int:pk>/', DeleteExpenseView.as_view(), name='delete expense'),
+
+    path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico')),
 
 )
